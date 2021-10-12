@@ -119,6 +119,118 @@
          </div>
   
   
+  
+  <div id ="program" class="content-section-a">
+         <div class="container">        
+                 <div class="wow fadeInRightBig" data-animation-delay="200">   
+                     <h3 class="section-heading" style='text-align: justify;color:#164FC9'>Schedule</h3>
+        <div id="controller">
+          <div id='row fadeInRightBig'>
+           
+           
+           
+          <div class="wow">
+<h4 class="section-heading" style="text-align: justify;color:#34495E">Aug 21 (12AM – 6AM) UTC,
+Friday Evening in Montreal</h4>
+           <div class="title">
+            <span v-for="(item,index) of country"  :class="currentCountry == index ? 'titleItemSelect' : 'titleItem'" @click="changeIndex(index)">
+              {{item}}
+            </span>
+          </div>
+           <table class="table " style="width:100%;" id="china">
+               <tr class="info">
+                  <td><strong>Time</strong></td>
+                  <td><strong>Session</strong></td>
+                  <td><strong>Speakers</strong></td>
+                  <td><strong>Materials</strong></td>
+                </tr>
+               
+                <tr class="success">
+                 <td>{{tableData[currentCountry][0]}}</td>
+                  <td><strong>Opening Remarks</strong></td>
+                  <td>Xiu-Shen Wei</td>
+                  <td>-</td>
+
+                </tr>
+                <tr class="success">
+                  <td>{{tableData[currentCountry][1]}}</td>
+                  <td><strong>Invited Talk 1</strong></td>
+                  <td>Bernt Schiele</td>
+                  <td>-</td>
+                </tr>
+                <tr class="success">
+                  <td>{{tableData[currentCountry][2]}}</td>
+                  <td><strong>Invited Talk 2</strong></td>
+                  <td>Dacheng Tao</td>
+                  <td><a style="color: #1e6bb8; font-size:20px" href="https://www.youtube.com/watch?v=TXrXl1SKWGA&list=PLt6KHeZQqR5HdYm5FnA8lZ7_u3dFHzuGU&index=1">video</a></td>
+                </tr>
+               
+               <tr class="success">
+                  <td>{{tableData[currentCountry][3]}}</td>
+                  <td><strong>Oral Presentation 1</strong></td>
+                  <td>-</td>
+                  <td>-</td>
+               </tr>
+               <tr class="success">
+                  <td>{{tableData[currentCountry][4]}}</td>
+                  <td><strong>Invited Talk 3</strong></td>
+                  <td>Ming-Hsuan Yang</td>
+                  <td>-</td>
+                </tr>
+                <tr class="success">
+                  <td>{{tableData[currentCountry][5]}}</td>
+                  <td><strong>Invited Talk 4</strong></td>
+                  <td>Daoqiang Zhang</td>
+                  <td><a style="color: #1e6bb8; font-size:20px" href="https://www.youtube.com/watch?v=0FXbSRi2iiU&list=PLt6KHeZQqR5HdYm5FnA8lZ7_u3dFHzuGU&index=3">video</a></td>
+                </tr>
+               <tr class="success">
+                  <td>{{tableData[currentCountry][6]}}</td>
+                  <td><strong>Oral Presentation 2</strong></td>
+                  <td>-</td>
+                  <td>-</td>
+               </tr>
+               
+               <tr class="success">
+                  <td>{{tableData[currentCountry][7]}}</td>
+                  <td><strong>Invited Talk 5</strong></td>
+                  <td>Stella Yu</td>
+                  <td><a style="color: #1e6bb8; font-size:20px" href="https://www.youtube.com/watch?v=sglqxehIyf0&list=PLt6KHeZQqR5HdYm5FnA8lZ7_u3dFHzuGU&index=4">video</a></td>
+
+               </tr>
+               <tr class="success">
+                  <td>{{tableData[currentCountry][8]}}</td>
+                  <td><strong>Invited Talk 6</strong></td>
+                  <td>Boqing Gong</td>
+                  <td><a style="color: #1e6bb8; font-size:20px" href="https://www.youtube.com/watch?v=fvro32K6dyw&list=PLt6KHeZQqR5HdYm5FnA8lZ7_u3dFHzuGU&index=2">video</a></td>
+
+               </tr>
+            
+               <tr class="success">
+                  <td>{{tableData[currentCountry][9]}}</td>
+                  <td><strong>Best Paper Presentation</strong></td>
+                  <td>-</td>
+                  <td>-</td>
+
+               </tr>
+               <tr class="success">
+                  <td>{{tableData[currentCountry][10]}}</td>
+                  <td><strong>Panel Session & QA</strong></td>
+                  <td>-</td>
+                  <td>-</td>
+
+               </tr>
+            </table>
+          </div>
+        </div>
+        </div>              
+
+                 </div>
+         </div>
+     </div>
+  
+  
+  
+  
 
   
  
@@ -153,6 +265,26 @@
      
      </script>
   
+  
+  <script>
+  var app = new Vue({
+    el: '#controller',
+    data: {
+      country: ['UTC', 'China', 'German'],
+      currentCountry: 0,
+      tableData: [
+        ['00:00am - 00:10am','00:10am - 00:40am','00:40am - 01:10am','01:10am - 01:20am','01:20am - 01:50am','01:50am - 02:20am','02:20am - 02:30am', '02:30am - 03:00am', '03:00am - 03:30am', '03:30am - 03:40am', '03:40am - 04:30am'],
+        ['08:00am - 08:10am','08:10am - 08:40am','08:40am - 09:10am','09:10am - 09:20am','09:20am - 09:50am','09:50am - 10:20am','10:20am - 10:30am', '10:30am - 11:00am', '11:00am - 11:30am', '11:30am - 11:40am', '11:40am - 12:30am'],
+        ['02:00am - 02:10am','02:10am - 02:40am','02:40am - 03:10am','03:10am - 03:20am','03:20am - 03:50am','03:50am - 04:20am','04:20am - 04:30am', '04:30am - 05:00am', '05:00am - 05:30am', '05:30am - 05:40am', '05:40am - 06:30am']
+      ]
+    },
+    methods: {
+      changeIndex(i) {
+        this.currentCountry = i
+      }
+    }
+  })
+  </script>
   
      <!-- Smoothscroll -->
      <script type="text/javascript" src="js/jquery.corner.js"></script> 
