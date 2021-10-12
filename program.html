@@ -133,7 +133,7 @@
 <h4 class="section-heading" style="text-align: justify;color:#34495E">October 24, UTC 
 </h4>
            <div class="title">
-            <span v-for="(item,index) of country"  :class="currentCountry == index ? 'titleItemSelect' : 'titleItem'" @click="changeIndex(index)">
+            <span v-for="(item,index) of country"  :class="currentCountry == index ? 'titleItemSelect' : 'titleItem'" @click="changeIndex(index)" style='margin-right=20px'>
               {{item}}
             </span>
           </div>
@@ -250,7 +250,7 @@
   var app = new Vue({
     el: '#controller',
     data: {
-      country: ['UTC', 'China', 'German', 'N. America (East)'],
+      country: ['UTC', 'China', 'N. America (East)'],
       currentCountry: 0,
       tableData: [
         ['06:00am - 06:10am','06:10am - 06:40am','06:40am - 07:10am','07:10am - 07:20am','07:20am - 07:50am','07:50am - 08:20am','08:20am - 08:30am', '08:30am - 09:00am'],
