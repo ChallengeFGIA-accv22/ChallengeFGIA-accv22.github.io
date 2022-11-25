@@ -120,7 +120,7 @@
 <h4 class="section-heading" style="text-align: justify;color:#34495E">December 5<sup>th</sup>, China</h4>
            <div class="title">
             <span v-for="(item,index) of country"  :class="currentCountry == index ? 'titleItemSelect' : 'titleItem'" @click="changeIndex(index)" style='margin-right=60px'>
-              {&nbsp{item}&nbsp}
+              {{item}}
             </span>
           </div>
            <table class="table " style="width:100%;" id="china">
@@ -244,6 +244,22 @@
      <script src="js/uiMorphingButton_inflow.js"></script>
      <!-- Magnific Popup core JS file -->
      <script src="js/jquery.magnific-popup.js"></script> 
+  <style>
+  .title {
+    width:100%;
+  }
+  .titleItem {
+    margin-right: 40px;
+    font-size: 15px;
+  }
+  .titleItemSelect {
+    margin-right: 40px;
+    color: #1abc9c;
+    font-weight: 600;
+    font-size: 15px;
+
+  }
+</style>
  </body>
  
  </html>
