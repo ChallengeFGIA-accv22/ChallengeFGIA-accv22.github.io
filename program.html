@@ -33,7 +33,7 @@
      
      <!-- Magnific Popup core CSS file -->
      <link rel="stylesheet" href="css/magnific-popup.css"> 
-     
+     <script src="js/vue.js"></script>
      <script src="js/modernizr-2.8.3.min.js"></script>  <!-- Modernizr /-->
      <!--[if IE 9]>
          <script src="js/PIE_IE9.js"></script>
@@ -138,29 +138,80 @@ The review process does not involve authors feedback and rebuttals. Upon accepta
         </div>
 
 
-      <div id ="scope" class="content-section-a" style="border-top: 0">
-            <div class="container">
-                <div class="row fadeInRightBig" style='visibility:hidden'>
-                    <div class="wow" data-animation-delay="200" style='visibility:hidden'> 
-                        <p class="lead" style="text-align:justify;visibility:hidden">
-                           This workshop targets researchers and practitioners from both industry and academia to provide a forum in which to publish recent state-of-the-art achievements in the Multimedia Understanding with Less Labeling area. Topics of interest include, but are not limited to:
-                        </p>
-                       <ul style="text-align:justify;padding:0 0 0 80px;visibility:hidden">
-                           <li class='lead'>Few/Zero-shot learning in Multimedia</li>
-                           <li class='lead'>Self-supervised learning in Multimedia</li>
-                            <li class='lead'>Semi-supervised learning in Multimedia</li>
-                             <li class='lead'>Long-tailed distribution learning in Multimedia</li>
-                              <li class='lead'>Weakly-supervised learning in Multimedia</li>
-                               <li class='lead'>Active learning in Multimedia</li>
-                                <li class='lead'>Incremental/Continual learning in Multimedia</li>
-                                 <li class='lead'>Multimodal learning with small/ Incomplete data</li>
-                       </ul>
-                    
-                    </div>   
-                </div>
-            </div>
+      
         </div>
     
+<div id ="program" class="content-section-a">
+         <div class="container">        
+                 <div class="wow fadeInRightBig" data-animation-delay="200">   
+                     <h3 class="section-heading" style='text-align: justify;color:#164FC9'>Schedule</h3>
+        <div id="controller">
+          <div id='row fadeInRightBig'>
+           
+           
+           
+          <div class="wow">
+<h4 class="section-heading" style="text-align: justify;color:#34495E">December 5<sup>th</sup>, China 
+</h4>
+           <div class="title">
+            <span v-for="(item,index) of country"  :class="currentCountry == index ? 'titleItemSelect' : 'titleItem'" @click="changeIndex(index)" style='margin-right=20px'>
+              {{item}}
+            </span>
+          </div>
+           <table class="table " style="width:100%;" id="china">
+               <tr class="info">
+                  <td><strong>Time</strong></td>
+                  <td><strong>Session</strong></td>
+                  <td><strong>Speakers</strong></td>
+<!--                   <td><strong>Materials</strong></td> -->
+                </tr>
+               
+                <tr class="success">
+                 <td>{{tableData[currentCountry][0]}}</td>
+                  <td><strong>Opening Remarks</strong></td>
+                  <td>Xiu-Shen Wei</td>
+<!--                   <td>-</td> -->
+
+                </tr>
+                <tr class="success">
+                  <td>{{tableData[currentCountry][1]}}</td>
+                  <td><strong>Invited Talk 1</strong></td>
+                  <td>Xin Yang</td>
+<!--                   <td>-</td> -->
+                </tr>
+                <tr class="success">
+                  <td>{{tableData[currentCountry][2]}}</td>
+                  <td><strong>Invited Talk 2</strong></td>
+                  <td>Oisin Mac Aodha</td>
+<!--                   <td><a style="color: #1e6bb8; font-size:20px" href="https://www.youtube.com/watch?v=TXrXl1SKWGA&list=PLt6KHeZQqR5HdYm5FnA8lZ7_u3dFHzuGU&index=1">video</a></td> -->
+                </tr>
+               
+               <tr class="success">
+                  <td>{{tableData[currentCountry][3]}}</td>
+                  <td><strong>Invited Talk 3</strong></td>
+                  <td>Qilong Wang</td>
+<!--                   <td>-</td> -->
+               </tr>
+               <tr class="success">
+                  <td>{{tableData[currentCountry][4]}}</td>
+                  <td><strong>Invited Talk 4</strong></td>
+                  <td>Zhanyu Ma</td>
+<!--                   <td>-</td> -->
+                </tr>
+            <tr class="success">
+                  <td>{{tableData[currentCountry][4]}}</td>
+                  <td><strong>Winner Solutions of the Challenges</strong></td>
+                  <td>Top 3 Winners of Two Tracks</td>
+<!--                   <td>-</td> -->
+                </tr>
+            </table>
+          </div>
+        </div>
+        </div>              
+
+                 </div>
+         </div>
+     </div>
 
 
 
@@ -196,6 +247,28 @@ The review process does not involve authors feedback and rebuttals. Upon accepta
        });
      
      </script>
+  
+  <script>
+  var app = new Vue({
+    el: '#controller',
+    data: {
+      country: ['China', 'UTC', 'N. America (East)'],
+      currentCountry: 0,
+      tableData: [
+        ['09:00am - 09:05am','09:05am - 09:35am','09:35am - 10:05am','10:05am - 10:35am','10:35am - 11:05am','11:05am - 12:05am'],
+        ['14:00pm - 14:05pm','14:05pm - 14:40pm','14:40pm - 15:15pm','15:15pm - 15:50pm','15:50pm - 16:25pm','16:25pm - 17:00pm'],
+        ['02:00am - 02:05am','02:05am - 02:40am','02:40am - 03:15am','03:15am - 03:50am','03:50am - 04:25am','04:25am - 05:00am'],
+      ]
+    },
+    methods: {
+      changeIndex(i) {
+        this.currentCountry = i
+      }
+    }
+  })
+  </script>
+  
+  
      <!-- Smoothscroll -->
      <script type="text/javascript" src="js/jquery.corner.js"></script> 
      <script src="js/wow.min.js"></script>
